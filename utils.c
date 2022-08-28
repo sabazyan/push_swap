@@ -95,11 +95,11 @@ char	*ft_strdup(char	*s1)
 	return (s);
 }
 
-long int	ft_atoi(char	*str)
+long long int	ft_atoi(char	*str)
 {
-	int			i;
-	int			sign;
-	long int	num;
+	int				i;
+	int				sign;
+	long long int	num;
 
 	i = 0;
 	sign = 1;

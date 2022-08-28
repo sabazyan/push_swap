@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	ft_printf(char *str)
 {
@@ -54,14 +55,21 @@ int	check_doubles(char **tab)
 
 int	bigger_value(char **tab)
 {
-	int			i;
-	long int	num;
+	int				i;
+	long long int	num;
 
 	i = 0;
 	while (tab[i])
 	{
 		num = ft_atoi(tab[i]);
-		if (ft_strlen(tab[i]) > 11 && (num > 2147483647 || num < -2147483648))
+		if (num != 0)
+		{
+			while (*(tab[i]) == '0')
+				tab[i] += 1;
+		}
+		if (ft_strlen(tab[i]) > 11)
+			return (0);
+		if (num > 2147483647 || num < -2147483648)
 			return (0);
 		i++;
 	}
