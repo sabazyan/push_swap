@@ -33,11 +33,12 @@ int	ft_isdigit(char **s)
 		j = 1;
 		if (ft_strcmp(s[i], "-") == 0 || ft_strcmp(s[i], "+") == 0)
 			return (0);
+		if (s[i][0] < 43 || (s[i][0] > 43 && s[i][0] < 45)
+		|| (s[i][0] > 45 && s[i][0] < 48) || s[i][0] > 57)
+			return (0);
 		while (s[i][j])
 		{
-			if ((s[i][j] < 48 || s[i][j] > 57) || (s[i][0] < 43 ||
-						(s[i][0] > 43 && s[i][0] < 45) || (s[i][0] > 45 &&
-							s[i][0] < 48) || s[i][0] > 57))
+			if (s[i][j] < 48 || s[i][j] > 57)
 				return (0);
 			j++;
 		}

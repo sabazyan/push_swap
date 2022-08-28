@@ -61,7 +61,7 @@ int	bigger_value(char **tab)
 	while (tab[i])
 	{
 		num = ft_atoi(tab[i]);
-		if (num > 2147483647 || num < -2147483648)
+		if (ft_strlen(tab[i]) > 11 && (num > 2147483647 || num < -2147483648))
 			return (0);
 		i++;
 	}

@@ -44,6 +44,8 @@ t_list	*a(char **tab)
 
 	i = 1;
 	first = (t_list *)malloc(sizeof(t_list));
+	if (!first || !tab[0])
+		return (NULL);
 	first->value = ft_atoi(tab[0]);
 	first->next = NULL;
 	last = first;
